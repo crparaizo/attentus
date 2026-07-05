@@ -189,7 +189,7 @@ def main():
         st.subheader("Total de Atendentes por Turno")
         st.dataframe(df_totais.reset_index(name='Total de Atendentes'), 
                      hide_index=True)
-        st.success(f"Custo Total: R$ {prob.objective.value():,.2f}")
+        st.success(f":streamlit: Custo Total: R$ {prob.objective.value():,.2f}")
 
 
 
