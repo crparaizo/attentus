@@ -1,0 +1,4 @@
+venv_attentus
+*.pyc
+*.ipynb_checkpoints
+*.ipynb
