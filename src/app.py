@@ -130,6 +130,12 @@ def main():
         df_duracoes = pd.read_excel(uploaded_file_duracoes)
         st.subheader("Tabela de Durações")
         df_duracoes = st.data_editor(df_duracoes, use_container_width=True)
+        df_duracoes.rename(columns={            
+            "Percentagem Acumulada": "percentagem_acumulada",
+            "Duração Conexão": "duracao_conexao",
+            "Número Ligantes": "numero_ligantes",
+            "Percentagem Relativa":"percentagem_relativa"
+        }, inplace=True)
     
     uploaded_file_ligantes = \
         st.sidebar.file_uploader("Carregar arquivo com número médio de ligantes preenchidas", 
@@ -139,6 +145,13 @@ def main():
         df_tabela_ligantes = pd.read_excel(uploaded_file_ligantes)
         st.subheader("Tabela de Ligantes")
         df_tabela_ligantes = st.data_editor(df_tabela_ligantes, use_container_width=True)
+
+        df_tabela_ligantes.rename(columns={
+            "Hora Início": "hora_inicio",
+            "Hora Fim": "hora_fim",
+            "Número Médio Ligantes": "nml",
+            "Rótulo": "rotulo"            
+        }, inplace=True)
 
     st.sidebar.divider()
     # ---------------------------------------------------------------------------------
